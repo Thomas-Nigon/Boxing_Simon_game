@@ -2,6 +2,11 @@
 const start = document.querySelector('.startButton')
 const sequence = document.querySelector('#prompt')
 const playerInput = document.querySelectorAll('.punchBtn')
+const menu = document.querySelector('.menuIcon')
+const menuBar = document.querySelector('.menuBar')
+const nameForm = document.querySelector('input')
+
+let activeMenu = 0
 let seqCntr = 0
 let level = 3
 let punchSequence = []
@@ -69,7 +74,23 @@ function playerInputSequence(e){
   console.log(`I clicked ${playerSequence} button`)
   matchingCheck()
 } 
+function menuSlide() {
+ if(activeMenu) {
+  menuBar.classList.remove('active')
+  activeMenu = 0
+ } else {
+  menuBar.classList.add('active')
+  activeMenu = 1
+ }
+}
+
+function fillName(e){
+console.log(e)
+nameForm.value = ''
+}
 
 // My event listener
 start.addEventListener('click', startGame)
 playerInput.forEach(button => button.addEventListener('click', playerInputSequence))
+menu.addEventListener('click', menuSlide )
+nameForm.addEventListener('click', fillName)

@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Simon Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="myDisplay"><span id="prompt">Hello friend, press start button to begin your journey as a boxer</span></div>
+  <section class="navBar">Pao clicker
+    <img src="./assets/Hamburger_icon.svg.png" class="menuIcon" alt="Hamburger icon symbol for menu">
+  </section>
+  <div class="menuBar" >
+    <button class="menuButton">About</button>
+    <button class="menuButton"> Reset</button>
+  </div>
+ 
+  <div class="welcome">
+    <form action="" method="get" class="form-example">
+      <div class="nameForm">
+        <label for="name"></label>
+        <input type="text" name="name" id="name" required value="Enter your name: ">
+   
+        <input type="submit" value="Next">
+      </div>
+    </form>
+    <img src="./assets/pxArt.png" alt="pixel art picture of Mike Tyson" class="tysonWelcome">
+  </div>
+
+
+
+
+  <div class="comboPage hidden">
+    <div class="myDisplay"><span id="prompt">Hello friend, press start button to begin your journey as a boxer</span></div>
   <button class="startButton">Start</button>
-  <div class="mainContainer">
+  <div class="buttonContainer">
     <button class="punchBtn" name="jab">jab</button>
     <button class="punchBtn" name="cross">cross</button>
     <button class="punchBtn" name="lead hook">Lead Hook</button>
     <button class="punchBtn" name="rear hook">Rear Hook</button>
   </div>
+  </div>
+  
+  <footer>Pao Clicker made by Disko - free project
+  </footer>
   <script src="./script.js"></script>
 </body>
 </html>
