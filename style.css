@@ -1,0 +1,136 @@
+ @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+:root{
+    --mainColor: #0D2B45;
+    --secondaryColor: #EAE0D5;
+    --thirdColor: hsla(33, 20%, 31%);
+    --thirdColorAlpha: hsla(33, 20%, 31%, 0.5);
+    --alpha: 0.5;
+}
+/* THINGS TO HIDE */
+.hidden{
+    display: none;
+}
+
+/* BASE BODY AND FOOTER STYLE*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'VT323', 'Courier New', Courier, monospace;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainColor);
+    min-height: 100vh;
+}
+footer{
+    background-color: var(--secondaryColor);
+    margin-top: auto;
+}
+
+/* NAV BAR STYLE*/
+.navBar{
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    height: 6vh;
+    z-index: 999;
+}
+.menuBar{
+    z-index: -999;
+    background-color: var(--thirdColor);
+    color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    font-size: 4em;
+    height: 6vh;
+    transform: translateY(-200%) scale(1);
+}
+.menuBar.active {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+    transition: 0.5s;
+  }
+.menuIcon{
+    background-color: var(--thirdColorAlpha);
+    width: auto;
+    height: 100%;
+}
+.menuButton{
+    color: var(--secondaryColor);
+    background-color: var(--thirdColor);
+    font-size: 1.5rem;
+    height: 100%;
+    border: none;
+}
+
+/* WELCOME PAGE STYLE*/
+.welcome{
+    display: flex;
+    flex-direction: column;
+}
+.nameForm{
+    background-color: aqua;
+    height: 10vh;
+    width: 50vw;
+    margin:  6vh auto 0 auto;
+    border-radius: 5px;
+}
+.tysonWelcome{
+    margin: 0vh auto 0vh auto;
+    height: 60vh;
+    width: 80vw;
+}
+input{
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondaryColor);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+input > submit{
+    background-color: aqua;
+}
+
+
+
+
+
+
+.myDisplay {
+    text-align: center;
+    border-width: 5px;
+    border-style: groove;
+    margin: 50px auto; 
+    width: 50%;
+}
+.mainContainer{
+    background-color: aqua;
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    margin: 150px auto; 
+}
+.startButton{
+    background-color: rgb(166, 131, 198);
+    text-align: center;
+    border-width: 2px;
+    width: 50%;
+    margin: 0 auto;
+}
+/* button{
+    border-width: 2px;
+    padding: 10px;
+    margin: 0 auto;
+} */
