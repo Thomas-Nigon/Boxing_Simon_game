@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    min-height: 100vh;
+
+}
+.myDisplay {
+    text-align: center;
+    border-width: 5px;
+    border-style: groove;
+    margin: 50px auto; 
+    width: 50%;
+}
+.mainContainer{
+    background-color: aqua;
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    margin: 150px auto; 
+}
+.startButton{
+    background-color: rgb(166, 131, 198);
+    text-align: center;
+    border-width: 2px;
+    width: 50%;
+    margin: 0 auto;
+}
+button{
+    border-width: 2px;
+    padding: 10px;
+    margin: 0 auto;
+}
