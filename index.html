@@ -1,48 +1,97 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simon game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sliding pages</title>
 </head>
 <body>
-  <section class="navBar">Pao clicker
+  <section class="navBar"> <h1>Pao Clicker</h1>
     <img src="./assets/Hamburger_icon.svg.png" class="menuIcon" alt="Hamburger icon symbol for menu">
+    <div class="menuBar" >
+      <button class="menu about">About</button>
+      <button class="menu reset"> Reset</button>
+    </div>
   </section>
-  <div class="menuBar" >
-    <button class="menuButton">About</button>
-    <button class="menuButton"> Reset</button>
-  </div>
  
-  <div class="welcome">
-    <form action="" method="get" class="form-example">
-      <div class="nameForm">
-        <label for="name"></label>
-        <input type="text" name="name" id="name" required value="Enter your name: ">
-   
-        <input type="submit" value="Next">
-      </div>
-    </form>
-    <img src="./assets/pxArt.png" alt="pixel art picture of Mike Tyson" class="tysonWelcome">
-  </div>
+  <div class="pageContainer">
+      <div class="pages">
 
+        
+        <div class="page welcome">
+          <div class="container large column">
+            <form action="" method="get" class="form-example">
+              <div class="nameForm">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" required value="Enter your name: ">       
+              </div>
+            </form>
+            <input type="submit" value="Next" onClick="slide('next')">
+            <img src="./assets/tyson.png" alt="pixel art picture of Mike Tyson" class="centered">
+            <div>
+              <button class="hidden" onClick="slide('next')">Next</button>
+            </div>
+          </div>
+          </div>
 
+        <div class="page tuto">
+          <div class="container large column">
+            <div class="tutoScreen">
+              Salut <span> PlayerName </span>, je suis ton coach.
+              Je vais t'apprendre la boxe. 
+              Je te donne une combinaison de coups, tu mémorises et reproduit à l'aide des boutons.
+              OK? 
+            </div>            
+            <button class="centered" name="startButton" onClick="slide('next')">START</button>
+            <img src="./assets/fernand.png" alt="A picture of a boxing coatch" class="limited centered">
+          </div>
+            
+          
+        </div>       
 
-
-  <div class="comboPage hidden">
-    <div class="myDisplay"><span id="prompt">Hello friend, press start button to begin your journey as a boxer</span></div>
-  <button class="startButton">Start</button>
-  <div class="buttonContainer">
-    <button class="punchBtn" name="jab">jab</button>
-    <button class="punchBtn" name="cross">cross</button>
-    <button class="punchBtn" name="lead hook">Lead Hook</button>
-    <button class="punchBtn" name="rear hook">Rear Hook</button>
-  </div>
-  </div>
+          <div class="page three">
+            <div class="container large column">
+              <div class="container row centered">
+                <div class="display punchSequence"> 
+                  <h2>Punch Sequence:</h2>
+                <span id="prompt"></span> </div>
+                  <img src="./assets/fernand.png" alt="A picture of a boxing coatch" class=" small">
+              </div>
   
+              <div class="buttonContainer">
+                <button class="punch" name="jab">jab</button>
+                <button class="punch" name="cross">cross</button>
+                <button class="punch" name="lead hook">Lead Hook</button>
+                <button class="punch" name="rear hook">Rear Hook</button>
+              </div>
+  
+              <div class="container div row centered">
+                <img src="./assets/pxArt(4).png" alt="I picture of the back of a boxer, ready to punch" class="small">
+                <div class="display stats"> <h2>Stats:</h2>
+                  <Ul>
+                    <li>Level: <span name="level">1</span></li>
+                    <li>Best level: <span name="winStreak">0</span></li>
+                    <li>Total combo: <span name="combo">0</span></li>
+                    <li>Miss: <span name="missed">0</span></li>
+                  </Ul>
+                </div>
+              </div>
+            </div>
+          </div>               
+        
+        <div class="page four">
+          <h1>PAGE 4</h1>
+          <div>
+            <button onClick="slide('prev')">Previous</button>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
   <footer>Pao Clicker made by Disko - free project
   </footer>
-  <script src="./script.js"></script>
+  <script src="./scripts.js"></script>
+    
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="navBar">Pao clicker
+    <img src="./assets/Hamburger_icon.svg.png" class="menuIcon" alt="Hamburger icon symbol for menu">
+  </section>
+  <div class="menuBar" >
+    <button class="menuButton about">About</button>
+    <button class="menuButton reset"> Reset</button>
+  </div>
+
+
+<!---->
+<div class="welcome">
+    <form action="" method="get" class="form-example">
+      <div class="nameForm">
+        <label for="name"></label>
+        <input type="text" name="name" id="name" required value="Enter your name: ">       
+      </div>
+    </form>
+    <input type="submit" value="next" class="hidden" >
+    <img src="./assets/tyson.png" alt="pixel art picture of Mike Tyson" class="tysonWelcome">
+  </div>
+  
+  <!-- ||||      TUTO PAGE      |||| -->
+   <!-- WELCOME SECTION REMOVE HIDDEN CLASS and add tutoPage TO SHOW -->
+  <div class="tutoPage">
+    <div class="tutoScreen">
+      Salut <span> PlayerName </span>, je suis ton coach.
+      Je vais t'apprendre la boxe. 
+      Je te donne une combinaison de coups, tu mémorise et reproduit à l'aide des boutons.
+      OK? 
+    </div>
+    <button class="nextButton shadowBox"> NEXT </button>
+    <img src="./assets/fernand.png" alt="A picture of a boxing coatch" class="fernand">
+  </div>
+  
+  <!-- ||||      COMBO PAGE      |||| -->
+  
+  <div class="comboPage">
+    <div class="comboScreen"><span id="prompt">Hello friend, press start button to begin your journey as a boxer</span></div>
+    <button class="startButton">Start</button>
+    <div class="buttonContainer">
+      <button class="punchBtn" name="jab">jab</button>
+      <button class="punchBtn" name="cross">cross</button>
+      <button class="punchBtn" name="lead hook">Lead Hook</button>
+      <button class="punchBtn" name="rear hook">Rear Hook</button>
+    </div>
+</div>
+   <footer>Pao Clicker made by Disko - free project
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>
+
+

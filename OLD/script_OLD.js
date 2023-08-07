@@ -5,10 +5,23 @@ const playerInput = document.querySelectorAll('.punchBtn')
 const menu = document.querySelector('.menuIcon')
 const menuBar = document.querySelector('.menuBar')
 const nameForm = document.querySelector('input')
+const next = document.querySelector('input[type="submit"]')
+const tysonWelcome = document.querySelector('.tysonWelcome')
+const welcome = document.querySelector('.welcome')
+const tutoPage = document.querySelector('.tutoPage')
+const nextToCombo = document.querySelector('.nextButton')
+const playerName = document.querySelector('span')
+const comboPage = document.querySelector('.comboPage')
+const reset = document.querySelector('.reset')
 
+let player = {
+  name: '',
+  level: 3,
+  bestWinStreak: 0,
+  comboDone: 0,
+}
 let activeMenu = 0
 let seqCntr = 0
-let level = 3
 let punchSequence = []
 let playerSequence = []
 let randomPunches = []
@@ -23,7 +36,7 @@ function startGame(){
 function randomizePunches(){
   punchSequence = []
   console.log(`function randomizePunches: punchSequence: ${punchSequence}`)
-  for (let i = 0; i < level; i++){
+  for (let i = 0; i < player.level; i++){
   randomPunches = punchList[Math.floor(Math.random() * 4)]
   punchSequence.push(randomPunches)
   console.log(`function randomizePunches: punchSequence: ${punchSequence}`)
@@ -32,7 +45,7 @@ function randomizePunches(){
 }
 function resetGameOver(){
   seqCntr = 0
-  level = 3 
+  player.level = 1 
   punchSequence = []
   playerSequence = []
   randomPunches = []
@@ -50,7 +63,7 @@ function lvlUpReset(){
 
 function matchingCheck(){
   console.log("entering matching check function")
-  console.log(`Sequence: ${seqCntr}/${level-1}, I clicked: ${playerSequence[seqCntr]}, expected: ${punchSequence[seqCntr]}`)
+  console.log(`Sequence: ${seqCntr}/${player.level-1}, I clicked: ${playerSequence[seqCntr]}, expected: ${punchSequence[seqCntr]}`)
   if (playerSequence[seqCntr] !== punchSequence[seqCntr]){
   console.log("gameOver")
   resetGameOver()
@@ -80,17 +93,48 @@ function menuSlide() {
   activeMenu = 0
  } else {
   menuBar.classList.add('active')
-  activeMenu = 1
+  activeMenu = 1  
  }
 }
 
 function fillName(e){
 console.log(e)
 nameForm.value = ''
+nameForm.classList.add('active')
+next.classList.remove('hidden')
+next.classList.add('active')
 }
+
+function toTuto(){
+  console.log(nameForm.value)
+  player.name = nameForm.value
+  playerName.textContent = player.name
+  console.log(player.name)
+}
+
+function toCombo(){
+  console.log("enter to combo page")
+  tutoPage.classList.remove('tutoPage')
+  tutoPage.classList.add('hidden')
+  comboPage.classList.remove('hidden')
+  comboPage.classList.add('comboPage')
+}
+
+function resetF(){
+  console.log(reset)
+  tutoPage.classList.add('hidden')
+  comboPage.classList.add('hidden')
+  welcome.classList.remove('hidden')
+}
+
+
 
 // My event listener
 start.addEventListener('click', startGame)
 playerInput.forEach(button => button.addEventListener('click', playerInputSequence))
 menu.addEventListener('click', menuSlide )
 nameForm.addEventListener('click', fillName)
+next.addEventListener('click', toTuto)
+nextToCombo.addEventListener('click', toCombo)
+reset.addEventListener('click', resetF)
+
