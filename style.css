@@ -1,136 +1,334 @@
- @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 :root{
     --mainColor: #0D2B45;
     --secondaryColor: #EAE0D5;
     --thirdColor: hsla(33, 20%, 31%);
     --thirdColorAlpha: hsla(33, 20%, 31%, 0.5);
     --alpha: 0.5;
+    --n:53;
 }
-/* THINGS TO HIDE */
-.hidden{
-    display: none;
-}
-
-/* BASE BODY AND FOOTER STYLE*/
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: 'VT323', 'Courier New', Courier, monospace;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'VT323', 'Courier New', Courier, monospace;
 }
 body{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--mainColor);
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mainColor);
+  min-height: 100vh;
 }
 footer{
-    background-color: var(--secondaryColor);
-    margin-top: auto;
+  display: flex;
+  background-color: var(--secondaryColor);
+  height: 2.5vh;
+  margin-top: auto;
+  text-align: center;
+}
+h1{
+  padding-left: 10px;
+  font-size: 2rem;
+}
+h2{
+  font-size: 1.5rem;
+  text-align: center;
+  color: black;
+}
+.divContainer h2{
+  color: white;
+}
+.punchSequence h2{
+  color: black;
 }
 
-/* NAV BAR STYLE*/
+
+/* ACTIVE AND HIDDEN CLASSES */
+.hidden{
+  display: none;
+}
+
+
+/* IMG AND PICTURE STYLE */
+img{
+    height: auto;
+    width: 100%;
+}
+.limited{
+    max-width: 400px;
+}
+.small{
+  display: flex;
+  flex-grow: 1;
+  height: 261px;
+  width: auto;
+}
+
+
+/* NAV BAR */
 .navBar{
-    background-color: var(--secondaryColor);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 0 10px;
-    font-size: 2rem;
-    height: 6vh;
-    z-index: 999;
+  background-color: var(--secondaryColor);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+  z-index: 999;
 }
 .menuBar{
-    z-index: -999;
-    background-color: var(--thirdColor);
-    color: var(--secondaryColor);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px 0 10px;
-    font-size: 4em;
-    height: 6vh;
-    transform: translateY(-200%) scale(1);
+  z-index:-999;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: var(--thirdColor);
+  color: var(--secondaryColor);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 4em;
+  height: 6vh;
+  opacity: 0;
+  transform: translateY(-100%);
+
 }
 .menuBar.active {
-    opacity: 1;
-    transform: translateY(0%) scale(1);
-    transition: 0.5s;
-  }
-.menuIcon{
-    background-color: var(--thirdColorAlpha);
-    width: auto;
-    height: 100%;
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+  transition: 0.5s;
+  z-index: 999;
 }
-.menuButton{
-    color: var(--secondaryColor);
-    background-color: var(--thirdColor);
-    font-size: 1.5rem;
-    height: 100%;
-    border: none;
+.menuIcon{
+  background-color: var(--thirdColorAlpha);
+  width: auto;
+  height: 100%;
+}
+.menuIcon:hover{
+  background-color: var(--thirdColor);
 }
 
-/* WELCOME PAGE STYLE*/
-.welcome{
-    display: flex;
-    flex-direction: column;
-}
+
+
+/* INPUT FORM */
 .nameForm{
-    background-color: aqua;
-    height: 10vh;
-    width: 50vw;
-    margin:  6vh auto 0 auto;
-    border-radius: 5px;
-}
-.tysonWelcome{
-    margin: 0vh auto 0vh auto;
-    height: 60vh;
-    width: 80vw;
+  height: 10vh;
+  width: 50vw;
+  margin:  6vh auto 0 auto;
+  border-radius: 5px;
 }
 input{
-    border: none;
-    border-radius: 5px;
-    background-color: var(--secondaryColor);
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    font-size: 1.3rem;
+border: none;
+border-radius: 5px;
+background-color: var(--secondaryColor);
+height: 100%;
+width: 100%;
+text-align: center;
+font-size: 1.3rem;
+margin: 0 auto;
+display: flex;
 }
-input > submit{
-    background-color: aqua;
+input.active {
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+input[type="submit" i] {
+display: flex;
+justify-content: center;
+width: 25vw;
+height: 5vh;
+margin: 10px auto 0 auto; 
+background-color: var(--thirdColor);
+color:rgb(255, 255, 255);
+opacity: 0;
+}
+input[type="submit" i].active{
+opacity: 1;
+transition: 0.5s;
+}
+input[type="submit" i]:hover{
+  background-color: var(--secondaryColor);
+  color: var(--thirdColor);
 }
 
 
-
-
-
-
-.myDisplay {
-    text-align: center;
-    border-width: 5px;
-    border-style: groove;
-    margin: 50px auto; 
-    width: 50%;
+.tutoScreen{
+  background-color: var(--secondaryColor);
+  width: 70%;
+  max-width: 400px;
+  padding: 2vh;
+  border-radius: 5px;
+  margin: 2vw auto 2vw auto;
+  color: black;
 }
-.mainContainer{
-    background-color: aqua;
+.tuto{
+  background-color: aqua;
+}
+.container{
     display: flex;
-    width: 50%;
+}
+.divContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+.large{
+    width: 100%;
+    display: flex;
+    border: 10px;
+}
+.centered{
+    margin: 0 auto;
+}
+.row{
     flex-direction: row;
-    margin: 150px auto; 
 }
-.startButton{
-    background-color: rgb(166, 131, 198);
-    text-align: center;
-    border-width: 2px;
-    width: 50%;
-    margin: 0 auto;
+.column{
+    flex-direction: column;
 }
-/* button{
-    border-width: 2px;
-    padding: 10px;
-    margin: 0 auto;
-} */
+.display{
+  background-color: var(--secondaryColor);
+  padding: 2vh;
+  border-radius: 5px;
+  color: black;
+}
+
+.punchSequence, .stats{
+  width: 40%;
+  height: 261px;
+  text-align: center;
+  flex-grow: 1;
+  padding: 0;
+}
+.stats{
+  width: 40%;
+  background-color: var(--thirdColor);
+  padding: 1vh;
+  border-radius: 5px;
+}
+
+.buttonContainer{
+  width: 100%;
+  max-width: 350px;
+  background-color: var(--secondaryColor);
+  display: flex;
+  height:20vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1vh auto 1vh auto;
+  justify-content: space-between;
+}
+
+
+/* LIST STYLE */
+.stats ul{
+  height: 100%;
+  color:white;
+  list-style: none;
+  text-align: left;
+}
+.punchSequence ol{
+  color: red;
+  text-align: left;
+  padding-left: 20px;
+}
+li{
+  margin: 10px;
+}
+
+
+
+/* BUTTON STYLE */
+button{
+  color: var(--secondaryColor);
+  background-color: var(--thirdColor);
+  border-radius: 5px;
+  padding: 8px;
+  width: 100px;
+  border: none;
+}
+button:hover{
+  color: var(--thirdColor);
+  background-color: var(--secondaryColor);
+}
+
+
+/* navbar buttons */
+.menu{
+  font-size: 1.5rem;
+  height: 100%;
+  width: 20%;
+}
+button.reset:hover{
+  background-color: var(--secondaryColor);
+  color: var(--thirdColor);
+  border-top-right-radius: 0px;
+}
+button.about:hover{
+  border-top-left-radius: 0px;
+}
+.punch{
+  font-size: 2rem;
+  border-radius: 0px;
+  padding: 10px;
+  margin:10px;
+  height: 40%;
+  width: 40%;
+}
+.punch:hover{
+  transform: scale(1.1);
+  background-color: var(--thirdColor);
+  color: white;
+}
+
+
+/* SLIDER AND PAGES*/
+.pageContainer{
+	width: 100%;
+	overflow: hidden;
+}
+.pages {
+  display: flex;
+	width: 400%;
+}
+.page {
+  width: 100%;
+  height: 91.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.7s;
+  color: white;
+  padding: 1vw;
+}
+.welcome{
+  background-color: var(--mainColor);
+}
+.tuto{
+  background-color: var(--mainColor)
+}
+.three{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--mainColor);
+}
+.four{
+  background-color: limegreen;
+}
+@media screen {
+    @media screen and (min-width: 650px){
+     .body{
+        margin: 20vh 20vw 20vh 20vw;
+     }
+     input{
+        max-width: 600px;
+     }
+     img{
+        max-width: 600px;
+        
+     }
+    }
+}
