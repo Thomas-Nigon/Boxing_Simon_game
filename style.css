@@ -32,15 +32,11 @@ h1{
   font-size: 2rem;
 }
 h2{
-  font-size: 1.5rem;
+  margin-bottom: 1vh;
+  font-size: 2rem;
+  width: 100%;
   text-align: center;
-  color: black;
-}
-.divContainer h2{
   color: white;
-}
-.punchSequence h2{
-  color: black;
 }
 
 
@@ -52,17 +48,19 @@ h2{
 
 /* IMG AND PICTURE STYLE */
 img{
-    height: auto;
-    width: 100%;
+  max-height: 800px;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
 }
 .limited{
-    max-width: 400px;
+    height: auto;
 }
 .small{
-  display: flex;
-  flex-grow: 1;
-  height: 261px;
-  width: auto;
+  height: auto;
+  max-width: 60vw;
+  width: 100%;
+  object-fit: scale-down;
 }
 
 
@@ -98,6 +96,9 @@ img{
   transform: translateY(0%) scale(1);
   transition: 0.5s;
   z-index: 999;
+  border: 5px;
+  border-color: black;
+  border-style: groove;
 }
 .menuIcon{
   background-color: var(--thirdColorAlpha);
@@ -156,30 +157,23 @@ input[type="submit" i]:hover{
   background-color: var(--secondaryColor);
   width: 70%;
   max-width: 400px;
-  padding: 2vh;
+  padding: 1vh;
   border-radius: 5px;
   margin: 2vw auto 2vw auto;
   color: black;
 }
-.tuto{
-  background-color: aqua;
-}
 .container{
-    display: flex;
-}
-.divContainer{
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  width: 100%;
+  justify-content: center;
+}
+.limitedH{
+  max-height: 40vh;
 }
 .large{
     width: 100%;
-    display: flex;
-    border: 10px;
 }
 .centered{
-    margin: 0 auto;
+    margin: 0px auto;
 }
 .row{
     flex-direction: row;
@@ -187,37 +181,48 @@ input[type="submit" i]:hover{
 .column{
     flex-direction: column;
 }
+.colorR{
+  background-color: red;
+}
+.colorB{
+  background-color: aqua;
+}
 .display{
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
   background-color: var(--secondaryColor);
-  padding: 2vh;
+  padding: 1vh;
   border-radius: 5px;
   color: black;
 }
 
 .punchSequence, .stats{
-  width: 40%;
-  height: 261px;
-  text-align: center;
-  flex-grow: 1;
-  padding: 0;
+  width: 100%;
+}
+.punchSequence{
+  color: white;
+  background-color: var(--thirdColor);
+  border-radius: 10px 0px 0px 10px;
 }
 .stats{
-  width: 40%;
   background-color: var(--thirdColor);
-  padding: 1vh;
-  border-radius: 5px;
+  border-radius: 0px 10px 10px 0px;
+}
+p{
+  padding: 20px;
+  height: 100%;
 }
 
 .buttonContainer{
-  width: 100%;
-  max-width: 350px;
   background-color: var(--secondaryColor);
   display: flex;
-  height:20vh;
-  flex-direction: row;
+  height: 100%;
+  max-height:15vh;
   flex-wrap: wrap;
   margin: 1vh auto 1vh auto;
   justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -245,8 +250,9 @@ button{
   background-color: var(--thirdColor);
   border-radius: 5px;
   padding: 8px;
-  width: 100px;
   border: none;
+  line-height: 0px;
+  height: 2vh;
 }
 button:hover{
   color: var(--thirdColor);
@@ -269,12 +275,13 @@ button.about:hover{
   border-top-left-radius: 0px;
 }
 .punch{
-  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
   border-radius: 0px;
   padding: 10px;
-  margin:10px;
-  height: 40%;
-  width: 40%;
+  margin:5px auto;
+  width: 35vw;
 }
 .punch:hover{
   transform: scale(1.1);
@@ -287,6 +294,7 @@ button.about:hover{
 .pageContainer{
 	width: 100%;
 	overflow: hidden;
+
 }
 .pages {
   display: flex;
@@ -318,17 +326,21 @@ button.about:hover{
 .four{
   background-color: limegreen;
 }
-@media screen {
-    @media screen and (min-width: 650px){
-     .body{
-        margin: 20vh 20vw 20vh 20vw;
-     }
-     input{
-        max-width: 600px;
-     }
-     img{
-        max-width: 600px;
-        
-     }
-    }
+@media screen and  (max-width: 390px){
+  .small{
+    max-width: 40vw;
+  }
+  .limited{
+    max-height: 300px;
+  }
 }
+
+@media screen and  (min-width: 900px){
+body{
+  margin: auto 400px;
+}
+} 
+
+
+
+  
