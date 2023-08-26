@@ -48,7 +48,7 @@ h2{
 
 /* IMG AND PICTURE STYLE */
 img{
-  max-height: 800px;
+  max-height: 600px;
   height: auto;
   width: 100%;
   object-fit: contain;
@@ -58,7 +58,7 @@ img{
 }
 .small{
   height: auto;
-  max-width: 60vw;
+  max-width: 50vw;
   width: 100%;
   object-fit: scale-down;
 }
@@ -252,7 +252,8 @@ button{
   padding: 8px;
   border: none;
   line-height: 0px;
-  height: 2vh;
+  height: 7vh;
+  width: 14vw;
 }
 button:hover{
   color: var(--thirdColor);
@@ -282,11 +283,12 @@ button.about:hover{
   padding: 10px;
   margin:5px auto;
   width: 35vw;
+  height: 2vh;
 }
 .punch:hover{
   transform: scale(1.1);
-  background-color: var(--thirdColor);
-  color: white;
+  background-color: var(--mainColor);
+  color: var(--secondaryColor);
 }
 
 
