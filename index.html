@@ -17,7 +17,7 @@
   <div class="pageContainer">
       <div class="pages">
 
-        
+
         <div class="page welcome">
           <div class="container large column">
             <form action="" method="get" class="form-example">
@@ -43,41 +43,48 @@
               OK? 
             </div>            
             <button class="centered" name="startButton" onClick="slide('next')">START</button>
-            <img src="./assets/fernand.png" alt="A picture of a boxing coatch" class="limited centered">
+            <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="limited centered">
           </div>
             
           
-        </div>       
+        </div>  
+        
+        <div class="page three">
+          <div class="container large column">
+            <div class="large container limitedH row centered">
+              <div class="display punchSequence"> 
+                <h2>Punch Sequence:</h2>
+               
+               <p><span id="prompt"></span></p>
+              
+            </div>
+                <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="small">
+            </div>
 
-          <div class="page three">
-            <div class="container large column">
-              <div class="container row centered">
-                <div class="display punchSequence"> 
-                  <h2>Punch Sequence:</h2>
-                <span id="prompt"></span> </div>
-                  <img src="./assets/fernand.png" alt="A picture of a boxing coatch" class=" small">
-              </div>
-  
-              <div class="buttonContainer">
-                <button class="punch" name="jab">jab</button>
-                <button class="punch" name="cross">cross</button>
-                <button class="punch" name="lead hook">Lead Hook</button>
-                <button class="punch" name="rear hook">Rear Hook</button>
-              </div>
-  
-              <div class="container div row centered">
-                <img src="./assets/pxArt(4).png" alt="I picture of the back of a boxer, ready to punch" class="small">
-                <div class="display stats"> <h2>Stats:</h2>
+            <div class="buttonContainer">
+              <button class="punch" name="jab">jab</button>
+              <button class="punch" name="cross">Cross</button>
+              <button class="punch" name="lead hook">Lead Hook</button>
+              <button class="punch" name="rear hook">Rear Hook</button>
+            </div>
+
+            <div class="large container divC row centered">
+              <img src="./assets/tysonBackResized.png" alt="I picture of the back of a boxer, ready to punch" class="small">
+              <div class="display stats">
+                <h2>Stats:</h2>
                   <Ul>
                     <li>Level: <span name="level">1</span></li>
                     <li>Best level: <span name="winStreak">0</span></li>
                     <li>Total combo: <span name="combo">0</span></li>
                     <li>Miss: <span name="missed">0</span></li>
                   </Ul>
-                </div>
+               
               </div>
             </div>
-          </div>               
+          </div>
+        </div>  
+
+                     
         
         <div class="page four">
           <h1>PAGE 4</h1>

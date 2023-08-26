@@ -130,6 +130,7 @@ function lvlUpReset(){
 
 // RESET AFTER A GAMEOVER
 function resetGameOver(){
+  window.alert('Ha nan tu as raté, on recommence à zero !');
   seqCntr = 0
   player.level = 1 
   punchSequence = []
