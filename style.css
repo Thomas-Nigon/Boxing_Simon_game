@@ -339,7 +339,13 @@ button.about:hover{
 
 @media screen and  (min-width: 900px){
 body{
-  margin: auto 400px;
+  margin: auto 200px;
+}
+.small{
+  max-width: 500px;
+}
+.limited{
+  max-height: 700px;
 }
 } 
 

@@ -159,7 +159,9 @@ function matchingCheck(){
     } else {
       console.log("owiii")
       seqCntr++
+      playerInput.classList.remove('hover')  
     }
+  playerInput.classList.remove('hover')  
 }
 
 //LISTENING TO PLAYER SEQUENCE
