@@ -23,7 +23,6 @@ function startGame(){
  console.log(`function randomizePunches: punchSequence: ${punchSequence}`)
  list.textContent = punchSequence
  }
-
 }
 
 
@@ -36,8 +35,7 @@ let translate = 0;
 function slide(direction){
   console.log("inside sliding function")
   direction === "next" ? (translate -= translateAmount, currentPage --) : (translate += translateAmount, currentPage ++);
- 
- 
+  
   pages.forEach(
     pages => (pages.style.transform = `translateX(${translate}%)`)
   );
@@ -103,14 +101,39 @@ function randomizePunches(){
   list.textContent = punchSequence
 }
 
+// MODAL POPUP
+const modalGood = document.getElementById('good');
+const modalWrong = document.getElementById('wrong');
+const btnAbout = document.querySelector('.about');
+const modalAbout = document.getElementById('about')
+
+const modal = document.querySelector('dialog');
+const closeModalG = document.querySelector('.good');
+const closeModalW = document.querySelector('.wrong');
+const closeModalAbout = document.querySelector('.btnAbout')
+
+closeModalG.addEventListener('click', ()=>{
+  modalGood.close()
+  console.log("close modal good")
+})
+closeModalW.addEventListener('click', ()=>{
+  modalWrong.close()
+  console.log("close modal wrong")
+})
+closeModalAbout.addEventListener('click', ()=>{
+  modalAbout.close()
+  console.log("close modal about")
+})
+
+
 
 //LVLUP AND RESET TO NEXT SEQUENCE FUNCTION
 const level = document.querySelector('[name="level"]')
 const winStreak = document.querySelector('[name="winStreak"]')
 const combo = document.querySelector('[name="combo"]')
 function lvlUpReset(){
+  modalGood.showModal()
   console.log("entering level function")
-  window.alert('Owii !! good job, on continue!');
   seqCntr=0
   punchSequence = []
   playerSequence = []
@@ -130,7 +153,7 @@ function lvlUpReset(){
 
 // RESET AFTER A GAMEOVER
 function resetGameOver(){
-  window.alert('Ha nan tu as raté, on recommence à zero !');
+  modalWrong.showModal()
   seqCntr = 0
   player.level = 1 
   punchSequence = []
@@ -159,9 +182,7 @@ function matchingCheck(){
     } else {
       console.log("owiii")
       seqCntr++
-      playerInput.classList.remove('hover')  
-    }
-  playerInput.classList.remove('hover')  
+    } 
 }
 
 //LISTENING TO PLAYER SEQUENCE
@@ -178,5 +199,18 @@ function playerInputSequence(e){
   list.textContent= playerSequence
   matchingCheck()
 } 
+
+// RESET FUNCTION
+const reset = document.querySelector('.reset')
+reset.addEventListener('click', () => {
+  window.location.reload()
+  console.log('reset done')
+})
+
+//ABOUT FUNCTION
+btnAbout.addEventListener('click', () => {
+modalAbout.showModal()
+console.log('show about')
+})
   
 

@@ -11,13 +11,20 @@
     <div class="menuBar" >
       <button class="menu about">About</button>
       <button class="menu reset"> Reset</button>
+      <dialog class="modal about" id="about" >
+        <ul>
+          <li>réalisé par Thomas NIGON</li>
+          <li> linkedIn: <a href="https://www.linkedin.com/in/thomas-nigon/">https://www.linkedin.com/in/thomas-nigon/</a></li>
+          <li>contact: <a href="nigont@gmail.com"></a> nigont@gmail.com</li>
+        </ul>
+        <button class="closeButton btnAbout">Close</button>
+      </dialog>
     </div>
   </section>
  
   <div class="pageContainer">
       <div class="pages">
-
-
+        
         <div class="page welcome">
           <div class="container large column">
             <form action="" method="get" class="form-example">
@@ -39,7 +46,7 @@
             <div class="tutoScreen">
               Salut <span> PlayerName </span>, je suis ton coach.
               Je vais t'apprendre la boxe. 
-              Je te donne une combinaison de coups, tu mémorises et reproduit à l'aide des boutons.
+              Je te donne une combinaison de coups, tu mémorises et reproduis à l'aide des boutons.
               OK? 
             </div>            
             <button class="centered" name="startButton" onClick="slide('next')">START</button>
@@ -48,7 +55,7 @@
             
           
         </div>  
-        
+
         <div class="page three">
           <div class="container large column">
             <div class="large container limitedH row centered">
@@ -82,8 +89,18 @@
               </div>
             </div>
           </div>
+          
+         <dialog class="modal" id="good">
+            <h2>ho ouiiiii good job !</h2>
+            <button class="closeButton good">Close</button>
+          </dialog>
+          <dialog class="modal" id="wrong">
+            <h2>Ha nan tu as raté</h2>
+            <button class="closeButton wrong">Close</button>
+          </dialog>
         </div>  
-
+        
+       
                      
         
         <div class="page four">

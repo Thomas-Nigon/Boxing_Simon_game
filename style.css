@@ -7,6 +7,14 @@
     --alpha: 0.5;
     --n:53;
 }
+::backdrop{
+  --mainColor: #0D2B45;
+  --secondaryColor: #EAE0D5;
+  --thirdColor: hsla(33, 20%, 31%);
+  --thirdColorAlpha: hsla(33, 20%, 31%, 0.5);
+  --alpha: 0.5;
+  --n:53;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -37,6 +45,28 @@ h2{
   width: 100%;
   text-align: center;
   color: white;
+}
+
+/* MODAL DIALOG STYLE */
+.modal{
+  background-color: var(--secondaryColor);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-color: black;
+  width: 300px;
+  max-width: 50%;
+}
+.about{
+  max-width: 100%;
+}
+.modal h2{
+  color: black;
+}
+dialog::backdrop{
+  background-color: var(--thirdColorAlpha);
 }
 
 
@@ -181,12 +211,6 @@ input[type="submit" i]:hover{
 .column{
     flex-direction: column;
 }
-.colorR{
-  background-color: red;
-}
-.colorB{
-  background-color: aqua;
-}
 .display{
   display: flex;
   text-align: center;
@@ -259,7 +283,11 @@ button:hover{
   color: var(--thirdColor);
   background-color: var(--secondaryColor);
 }
-
+/* MODAL BUTTONS */
+.closeButton{
+  display: block;
+  margin: 0 auto;
+  } 
 
 /* navbar buttons */
 .menu{
