@@ -1,114 +1,101 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Sliding pages</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Sliding pages</title>
 </head>
+
 <body>
-  <section class="navBar"> <h1>Pao Clicker</h1>
+  <section class="navBar">
+    <h1>Pao Clicker</h1>
     <img src="./assets/Hamburger_icon.svg.png" class="menuIcon" alt="Hamburger icon symbol for menu">
-    <div class="menuBar" >
+    <menu class="menuBar">
       <button class="menu about">About</button>
       <button class="menu reset"> Reset</button>
-      <dialog class="modal about" id="about" >
+      <dialog class="modal about" id="about">
         <ul>
           <li>réalisé par Thomas NIGON</li>
-          <li> linkedIn: <a href="https://www.linkedin.com/in/thomas-nigon/">https://www.linkedin.com/in/thomas-nigon/</a></li>
+          <li> linkedIn: <a
+              href="https://www.linkedin.com/in/thomas-nigon/">https://www.linkedin.com/in/thomas-nigon/</a></li>
           <li>contact: <a href="nigont@gmail.com"></a> nigont@gmail.com</li>
         </ul>
         <button class="closeButton btnAbout">Close</button>
       </dialog>
-    </div>
+    </menu>
   </section>
- 
+
   <div class="pageContainer">
-      <div class="pages">
-        
-        <div class="page welcome">
-          <div class="container large column">
-            <form action="" method="get" class="form-example">
-              <div class="nameForm">
-                <label for="name"></label>
-                <input type="text" name="name" id="name" required value="Enter your name: ">       
-              </div>
-            </form>
-            <input type="submit" value="Next" onClick="slide('next')">
-            <img src="./assets/tyson.png" alt="pixel art picture of Mike Tyson" class="centered">
-            <div>
-              <button class="hidden" onClick="slide('next')">Next</button>
-            </div>
-          </div>
-          </div>
+    <div class="pages">
 
-        <div class="page tuto">
-          <div class="container large column">
-            <div class="tutoScreen">
-              Salut <span> PlayerName </span>, je suis ton coach.
-              Je vais t'apprendre la boxe. 
-              Je te donne une combinaison de coups, tu mémorises et reproduis à l'aide des boutons.
-              OK? 
-            </div>            
-            <button class="centered" name="startButton" onClick="slide('next')">START</button>
-            <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="limited centered">
-          </div>
-            
-          
-        </div>  
-
-        <div class="page three">
-          <div class="container large column">
-            <div class="large container limitedH row centered">
-              <div class="display punchSequence"> 
-                <h2>Punch Sequence:</h2>
-               
-               <p><span id="prompt"></span></p>
-              
-            </div>
-                <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="small">
-            </div>
-
-            <div class="buttonContainer">
-              <button class="punch" name="jab">jab</button>
-              <button class="punch" name="cross">Cross</button>
-              <button class="punch" name="lead hook">Lead Hook</button>
-              <button class="punch" name="rear hook">Rear Hook</button>
-            </div>
-
-            <div class="large container divC row centered">
-              <img src="./assets/tysonBackResized.png" alt="I picture of the back of a boxer, ready to punch" class="small">
-              <div class="display stats">
-                <h2>Stats:</h2>
-                  <Ul>
-                    <li>Level: <span name="level">1</span></li>
-                    <li>Best level: <span name="winStreak">0</span></li>
-                    <li>Total combo: <span name="combo">0</span></li>
-                    <li>Miss: <span name="missed">0</span></li>
-                  </Ul>
-               
-              </div>
-            </div>
-          </div>
-          
-         <dialog class="modal" id="good">
-            <h2>ho ouiiiii good job !</h2>
-            <button class="closeButton good">Close</button>
-          </dialog>
-          <dialog class="modal" id="wrong">
-            <h2>Ha nan tu as raté</h2>
-            <button class="closeButton wrong">Close</button>
-          </dialog>
-        </div>  
-        
-       
-                     
-        
-        <div class="page four">
-          <h1>PAGE 4</h1>
-          <div>
-            <button onClick="slide('prev')">Previous</button>
-          </div>
+      <section class="page three ">
+        <article class="punchSequence">
+          <h2>Punch Sequence:</h2>
+          <p><span id="prompt"></span></p>
+        </article>
+        <img class="gridImg coachSide" src="./assets/fernandCroppedResized.png" 
+          alt="A picture of a boxing coatch">
+        <div class="buttonContainer">
+          <button class="punch1 punches" name="jab">jab</button>
+          <button class="punch2 punches" name="cross">Cross</button>
+          <button class="punch3 punches" name="lead hook">Lead Hook</button>
+          <button class="punch4 punches" name="rear hook">Rear Hook</button>
         </div>
+        <img class="boxerSide gridImg" src="./assets/tysonBackResized.png"
+            alt="I picture of the back of a boxer, ready to punch">
+        <article class="stats">
+          <h2>Stats:</h2>
+          <Ul>
+            <li>Level: <span name="level">1</span></li>
+            <li>Best level: <span name="winStreak">0</span></li>
+            <li>Total combo: <span name="combo">0</span></li>
+            <li>Miss: <span name="missed">0</span></li>
+          </Ul>
+        </article>
+        <dialog class="modal" id="good">
+          <h2>ho ouiiiii good job !</h2>
+          <button class="closeButton good">Close</button>
+        </dialog>
+        <dialog class="modal" id="wrong">
+          <h2>Ha nan tu as raté</h2>
+          <button class="closeButton wrong">Close</button>
+        </dialog>
+      </section>
+
+      <section class="page welcome container large column">
+        <form action="" method="get" class="nameForm">
+          <label for="name"></label>
+          <input type="text" name="name" id="name" required value="Enter your name: ">
+        </form>
+        <input type="submit" value="Next" onClick="slide('next')">
+        <img src="./assets/tyson_resized.png" alt="pixel art picture of Mike Tyson" class="centered">
+      </section>
+
+      <section class="page tuto container large column ">
+        <p class="tutoScreen">
+          Salut <span> PlayerName </span>, je suis ton coach.
+          Je vais t'apprendre la boxe.
+          Je te donne une combinaison de coups, tu mémorises et reproduis à l'aide des boutons.
+          OK?
+        </p>
+        <button class="centered next" name="startButton" onClick="slide('next')">START</button>
+        <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="limited centered">
+      </section>
+
+ 
+
+
+
+
+
+
+      <div class="page four">
+        <h1>PAGE 4</h1>
+        <div>
+          <button onClick="slide('prev')">Previous</button>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -116,6 +103,7 @@
   <footer>Pao Clicker made by Disko - free project
   </footer>
   <script src="./scripts.js"></script>
-    
+
 </body>
+
 </html>

@@ -10,6 +10,33 @@ let playerSequence = []
 let randomPunches = []
 const punchList = ["jab", "cross", "lead hook", "rear hook"]
 
+// MODAL POPUP
+const modalGood = document.getElementById('good');
+const modalWrong = document.getElementById('wrong');
+const btnAbout = document.querySelector('.about');
+const modalAbout = document.getElementById('about')
+
+const modal = document.querySelector('dialog');
+const closeModalG = document.querySelector('.good');
+const closeModalW = document.querySelector('.wrong');
+const closeModalAbout = document.querySelector('.btnAbout')
+
+closeModalG.addEventListener('click', ()=>{
+  modalGood.close()
+  console.log("close modal good")
+})
+closeModalW.addEventListener('click', ()=>{
+  modalWrong.close()
+  console.log("close modal wrong")
+})
+closeModalAbout.addEventListener('click', ()=>{
+  modalAbout.close()
+  console.log("close modal about")
+})
+  
+
+
+
 //FUNCTION START GAME
 const start = document.querySelector('[name="startButton"]')
 const list = document.querySelector('#prompt')
@@ -26,12 +53,11 @@ function startGame(){
 }
 
 
-// SLIDING FUNCTION
+// PAGE SLIDING FUNCTION
 const pages = document.querySelectorAll(".page");
 const translateAmount = 100; 
 let currentPage =0;
 let translate = 0;
-
 function slide(direction){
   console.log("inside sliding function")
   direction === "next" ? (translate -= translateAmount, currentPage --) : (translate += translateAmount, currentPage ++);
@@ -46,12 +72,10 @@ function slide(direction){
   }
 }
 
-
 // NAVBAR FUNCTION //
 const menu = document.querySelector('.menuIcon')
 const menuBar = document.querySelector('.menuBar')
 let activeMenu = 0
-
 function menuSlide() {
   if(activeMenu) {
     menuBar.classList.remove('active')
@@ -100,32 +124,6 @@ function randomizePunches(){
   }  
   list.textContent = punchSequence
 }
-
-// MODAL POPUP
-const modalGood = document.getElementById('good');
-const modalWrong = document.getElementById('wrong');
-const btnAbout = document.querySelector('.about');
-const modalAbout = document.getElementById('about')
-
-const modal = document.querySelector('dialog');
-const closeModalG = document.querySelector('.good');
-const closeModalW = document.querySelector('.wrong');
-const closeModalAbout = document.querySelector('.btnAbout')
-
-closeModalG.addEventListener('click', ()=>{
-  modalGood.close()
-  console.log("close modal good")
-})
-closeModalW.addEventListener('click', ()=>{
-  modalWrong.close()
-  console.log("close modal wrong")
-})
-closeModalAbout.addEventListener('click', ()=>{
-  modalAbout.close()
-  console.log("close modal about")
-})
-
-
 
 //LVLUP AND RESET TO NEXT SEQUENCE FUNCTION
 const level = document.querySelector('[name="level"]')
@@ -186,7 +184,7 @@ function matchingCheck(){
 }
 
 //LISTENING TO PLAYER SEQUENCE
-const playerInput = document.querySelectorAll('.punch')
+const playerInput = document.querySelectorAll('.punches')
 playerInput.forEach(button => button.addEventListener('click', playerInputSequence))
 function playerInputSequence(e){
   console.log("entering player inputSequence")
@@ -212,5 +210,3 @@ btnAbout.addEventListener('click', () => {
 modalAbout.showModal()
 console.log('show about')
 })
-  
-
