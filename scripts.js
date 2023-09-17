@@ -49,7 +49,16 @@ function createItem() {
     currentDiv.appendChild(newItem)
   }
 }
+function clearList(){
+const listItems = document.querySelectorAll('#prompt li');
 
+// 👇️ NodeList(5) [li, li, li, li, li]
+console.log(listItems);
+
+listItems.forEach(listItem => {
+  listItem.parentNode.removeChild(listItem);
+});
+}
 
 //FUNCTION START GAME
 const start = document.querySelector('[name="startButton"]')
@@ -149,13 +158,7 @@ function lvlUpReset() {
   seqCntr = 0
   punchSequence = []
   playerSequence = []
-
-  //select the list parent: the UL
-  const currentDiv = document.querySelector("#prompt");
-  //select all list items: LIs
-  const listItems = document.querySelector("li");
-  currentDiv.removeChild(listItems)
-  
+  clearList()
   randomPunches = []
   player.level += 1
   level.textContent = player.level
@@ -173,6 +176,7 @@ function lvlUpReset() {
 // RESET AFTER A GAMEOVER
 function resetGameOver() {
   modalWrong.showModal()
+  clearList()
   seqCntr = 0
   player.level = 1
   punchSequence = []
