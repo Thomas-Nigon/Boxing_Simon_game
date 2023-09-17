@@ -29,10 +29,35 @@
   <div class="pageContainer">
     <div class="pages">
 
+     
+
+      <section class="page welcome container large column">
+        <form action="" method="get" class="nameForm">
+          <label for="name"></label>
+          <input type="text" name="name" id="name" required value="Enter your name: ">
+        </form>
+        <input type="submit" value="Next" onClick="slide('next')">
+        <img src="./assets/tyson_resized.png" alt="pixel art picture of Mike Tyson" class="centered">
+      </section>
+
+      <section class="page tuto container large column ">
+        <p class="tutoScreen">
+          Salut <span> PlayerName </span>, je suis ton coach.
+          Je vais t'apprendre la boxe.
+          Je te donne une combinaison de coups, tu mémorises et reproduis à l'aide des boutons.
+          OK?
+        </p>
+        <button class="centered next" name="startButton" onClick="slide('next')">START</button>
+        <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="limited centered">
+      </section>
+
+ 
       <section class="page three ">
         <article class="punchSequence">
-          <h2>Punch Sequence:</h2>
-          <p><span id="prompt"></span></p>
+          <ul id="prompt">Punch Sequence:</ul>
+
+       <!--    <h2>Punch Sequence:</h2>
+          <p><span id="prompt"></span></p> -->
         </article>
         <img class="gridImg coachSide" src="./assets/fernandCroppedResized.png" 
           alt="A picture of a boxing coatch">
@@ -63,29 +88,6 @@
         </dialog>
       </section>
 
-      <section class="page welcome container large column">
-        <form action="" method="get" class="nameForm">
-          <label for="name"></label>
-          <input type="text" name="name" id="name" required value="Enter your name: ">
-        </form>
-        <input type="submit" value="Next" onClick="slide('next')">
-        <img src="./assets/tyson_resized.png" alt="pixel art picture of Mike Tyson" class="centered">
-      </section>
-
-      <section class="page tuto container large column ">
-        <p class="tutoScreen">
-          Salut <span> PlayerName </span>, je suis ton coach.
-          Je vais t'apprendre la boxe.
-          Je te donne une combinaison de coups, tu mémorises et reproduis à l'aide des boutons.
-          OK?
-        </p>
-        <button class="centered next" name="startButton" onClick="slide('next')">START</button>
-        <img src="./assets/fernandCroppedResized.png" alt="A picture of a boxing coatch" class="limited centered">
-      </section>
-
- 
-
-
 
 
 
@@ -97,7 +99,7 @@
         </div>
       </div>
     </div>
-
+  
   </div>
 
   <footer>Pao Clicker made by Disko - free project

@@ -283,7 +283,6 @@ p {
 
 .punchSequence {
   display: flex;
-  text-align: center;
   flex-wrap: wrap;
   padding: 1vh;
   border-radius: 5px;
@@ -348,6 +347,12 @@ p {
 li {
   margin: 10px;
 }
+#prompt{
+  font-size: 1.5rem;
+  padding-left: 5px;
+}
+
+
 
 /* BUTTON STYLE */
 button {
